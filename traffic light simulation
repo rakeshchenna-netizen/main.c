@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <unistd.h>   // for sleep()
+
+int main() {
+    int cycles;
+    int redTime, yellowTime, greenTime;
+
+    printf("Enter number of cycles: ");
+    scanf("%d", &cycles);
+
+    printf("Enter RED light duration (in seconds): ");
+    scanf("%d", &redTime);
+
+    printf("Enter YELLOW light duration (in seconds): ");
+    scanf("%d", &yellowTime);
+
+    printf("Enter GREEN light duration (in seconds): ");
+    scanf("%d", &greenTime);
+
+    for (int i = 1; i <= cycles; i++) {
+        printf("\n=== CYCLE %d ===\n", i);
+
+        printf("RED LIGHT - STOP\n");
+        sleep(redTime);
+
+        printf("YELLOW LIGHT - GET READY\n");
+        sleep(yellowTime);
+
+        printf("GREEN LIGHT - GO\n");
+        sleep(greenTime);
+
+        printf("-----------------------------\n");
+    }
+
+    return 0;
+}
